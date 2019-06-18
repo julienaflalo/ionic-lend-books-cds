@@ -13,6 +13,8 @@ import { CdsPage } from './../pages/cds/cds';
 import { SettingsPage } from './../pages/settings/settings';
 import { TabsPage } from './../pages/tabs/tabs';
 
+import { HardDbService } from './../services/hard-db.service';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -42,7 +44,8 @@ import { TabsPage } from './../pages/tabs/tabs';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HardDbService
   ]
 })
 export class AppModule {}

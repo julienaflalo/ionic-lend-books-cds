@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
 import { SingleCdPage } from './single-cd/single-cd';
+import { Cd } from './../../models/Cd';
+
+import { HardDbService } from './../../services/hard-db.service';
 
 @Component({
   selector: 'page-cd',
@@ -8,27 +11,16 @@ import { SingleCdPage } from './single-cd/single-cd';
 })
 export class CdsPage {
 
-  constructor(private navCtrl: NavController) {}
+  cdsList : Cd[];
 
-  cdsList = [
-    {
-      name: 'The Hypnoflip Invasion',
-      artist: 'Stupeflip',
-      image: 'the-hypnoflip-invasion.jpg',
-    },
-    {
-      name: 'A Night at the Opera',
-      artist: 'Queen',
-      image: 'a-night-at-the-opera.jpg',
-    },
-    {
-      name: 'Manifestation',
-      artist: 'Oxidaksi',
-      image: 'manifestation.jpg',
-    }
-  ];
+  constructor(private modalCtrl: ModalController, private hardDbService: HardDbService) {}
 
-  onLoadCd(cd: {name: string, artist: string, image: string}) {
-    this.navCtrl.push(SingleCdPage, {cd: cd});
+  ionViewWillEnter(){
+    this.cdsList = this.hardDbService.cdsList.slice();
+  }
+  
+  onLoadCd(index: number) {
+    let modal = this.modalCtrl.create(SingleCdPage, {index: index});
+    modal.present();
   }
 }

@@ -6,7 +6,7 @@
 
 <ion-content padding>
     <ion-list>
-        <button ion-item *ngFor="let book of booksList" (click)="onLoadBook(book)">
+        <button ion-item *ngFor="let book of booksList; let i = index" (click)="onLoadBook(i)">
             <ion-row>
                 <ion-col col-4 class="books-img">
                     <img src="assets/imgs/books/{{book.image}}">

@@ -6,7 +6,7 @@
 
 <ion-content padding>
     <ion-list>
-        <ion-item *ngFor="let cd of cdsList">
+        <ion-item *ngFor="let cd of cdsList; let i= index">
             <ion-thumbnail item-start>
                 <img src="/assets/imgs/cds/{{cd.image}}">
             </ion-thumbnail>
@@ -14,8 +14,7 @@
                 <h2>{{cd.name}}</h2>
                 <h4>{{cd.artist}}</h4>
             </div>
-            <button ion-button clear item-end (click)="onLoadCd(cd)">View</button>
+            <button ion-button clear item-end (click)="onLoadCd(i)">View</button>
         </ion-item>
-        <!-- <button ion-item *ngFor="let cd of cdsList" (click)="onLoadCd(cd)">{{cd.name}}</button> -->
     </ion-list>
 </ion-content>

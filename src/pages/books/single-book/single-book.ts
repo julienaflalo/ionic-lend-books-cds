@@ -1,24 +1,32 @@
-import { Component } from '@angular/core';
-import { NavParams } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { NavParams, ViewController } from 'ionic-angular';
+import { Book } from './../../../models/Book';
+import { HardDbService } from './../../../services/hard-db.service';
 
 @Component({
   selector: 'page-single-book',
   templateUrl: 'single-book.html',
 })
-export class SingleBookPage {
+export class SingleBookPage implements OnInit {
 
-  book: {
-    name: string,
-    author: string,
-    image: string,
-    description: string
-  }
+  index: number;
+  book: Book;
 
-  constructor(public navParams: NavParams) {
+  constructor(public navParams: NavParams, public viewCtrl: ViewController, public hardDbService: HardDbService) {
   }
 
   ngOnInit() {
-    this.book = this.navParams.get('book');
+    this.index = this.navParams.get("index");
+    this.book = this.hardDbService.booksList[this.index];
   }
+
+  dismissModal(){
+    this.viewCtrl.dismiss();
+  }
+
+  onToggleBook() {
+    this.book.isAvailable = !this.book.isAvailable;
+  }
+
 
 }
