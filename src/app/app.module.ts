@@ -7,12 +7,22 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { BooksPage } from './../pages/books/books';
+import { SingleBookPage } from './../pages/books/single-book/single-book';
+import { SingleCdPage } from './../pages/cds/single-cd/single-cd';
+import { CdsPage } from './../pages/cds/cds';
+import { SettingsPage } from './../pages/settings/settings';
+import { TabsPage } from './../pages/tabs/tabs';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    BooksPage
+    BooksPage,
+    SingleBookPage,
+    CdsPage,
+    SingleCdPage,
+    SettingsPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +32,12 @@ import { BooksPage } from './../pages/books/books';
   entryComponents: [
     MyApp,
     HomePage,
-    BooksPage
+    BooksPage,
+    SingleBookPage,
+    CdsPage,
+    SingleCdPage,
+    SettingsPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
