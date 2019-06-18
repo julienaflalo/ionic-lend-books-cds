@@ -9,7 +9,7 @@
 
 
 <ion-content padding>
-    <ion-card>
+    <ion-card [ngClass]="{'is-available': book.isAvailable, 'is-not-available': !book.isAvailable}">
         <ion-card-header>
             <h2>{{ book.name }}</h2>
             <h4>{{ book.author }}</h4>

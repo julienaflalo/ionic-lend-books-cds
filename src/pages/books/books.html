@@ -6,12 +6,12 @@
 
 <ion-content padding>
     <ion-list>
-        <button ion-item *ngFor="let book of booksList; let i = index" (click)="onLoadBook(i)">
+        <button [ngClass]="{'is-available': book.isAvailable, 'is-not-available': !book.isAvailable}" ion-item *ngFor=" let book of booksList; let i=index" (click)="onLoadBook(i) ">
             <ion-row>
-                <ion-col col-4 class="books-img">
-                    <img src="assets/imgs/books/{{book.image}}">
+                <ion-col col-4 class="books-img ">
+                    <img src="assets/imgs/books/{{book.image}} ">
                 </ion-col>
-                <ion-col col-8 class="books-text">
+                <ion-col col-8 class="books-text ">
                     <h2>{{book.name}}</h2>
                     <h4>{{book.author}}</h4>
                 </ion-col>

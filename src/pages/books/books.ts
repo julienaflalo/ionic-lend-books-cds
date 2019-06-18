@@ -23,9 +23,4 @@ export class BooksPage {
     let modal = this.modalCtrl.create(SingleBookPage, {index: index});
     modal.present();
   }
-
-  // onLoadBook(book: {name: string, author: string, image: string, description: string}) {
-  //   this.navCtrl.push(SingleBookPage, {book: book});
-  // }
-
 }

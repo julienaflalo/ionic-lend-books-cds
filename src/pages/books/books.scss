@@ -12,4 +12,12 @@ page-books {
         white-space: normal;
         padding-left: 8px;
     }
+    button {
+        &.is-available {
+            background-color: #eeffee;
+        }
+        &.is-not-available {
+            background-color: #ffeeee;
+        }
+    }
 }

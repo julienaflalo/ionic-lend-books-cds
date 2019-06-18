@@ -5,4 +5,12 @@ page-cd {
     .cds-text {
         white-space: normal;
     }
+    ion-item {
+        &.is-available {
+            background-color: #eeffee;
+        }
+        &.is-not-available {
+            background-color: #ffeeee;
+        }
+    }
 }

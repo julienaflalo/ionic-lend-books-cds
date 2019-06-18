@@ -6,7 +6,7 @@
 
 <ion-content padding>
     <ion-list>
-        <ion-item *ngFor="let cd of cdsList; let i= index">
+        <ion-item [ngClass]="{'is-available': cd.isAvailable, 'is-not-available': !cd.isAvailable}" *ngFor="let cd of cdsList; let i= index">
             <ion-thumbnail item-start>
                 <img src="/assets/imgs/cds/{{cd.image}}">
             </ion-thumbnail>

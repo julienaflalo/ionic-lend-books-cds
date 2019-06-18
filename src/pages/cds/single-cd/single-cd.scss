@@ -35,5 +35,20 @@ page-single-cd {
                 text-shadow: 1px 1px 2px black;
             }
         }
+        .availability {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 8px 12px;
+            border-radius: 5px 0 0 0;
+            color: #fff;
+            font-weight: bold;
+            &.is-available {
+                background-color: color($colors, secondary);
+            }
+            &.is-not-available {
+                background-color: color($colors, danger);
+            }
+        }
     }
 }

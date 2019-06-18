@@ -1,10 +1,18 @@
 page-single-book {
-    img {
-        width: auto;
-        margin: auto;
-        margin: 10px auto;
-        border-radius: 5px;
-        max-height: 150px;
-        box-shadow: 5px 4px 10px #444;
+    ion-card {
+        img {
+            width: auto;
+            margin: auto;
+            margin: 10px auto;
+            border-radius: 5px;
+            max-height: 150px;
+            box-shadow: 5px 4px 10px #444;
+        }
+        &.is-available {
+            background-color: #eeffee;
+        }
+        &.is-not-available {
+            background-color: #ffeeee;
+        }
     }
 }

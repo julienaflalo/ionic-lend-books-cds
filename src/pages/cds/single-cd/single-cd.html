@@ -16,5 +16,8 @@
             <div class="card-title">{{cd.name}}</div>
             <div class="card-subtitle">{{cd.artist}}</div>
         </div>
+        <div class="availability" [ngClass]="{'is-available': cd.isAvailable, 'is-not-available': !cd.isAvailable}">
+            <ion-icon name="{{cd.isAvailable ? 'checkmark' : 'close' }}"></ion-icon>
+        </div>
     </ion-card>
 </ion-content>
