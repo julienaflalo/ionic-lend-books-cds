@@ -1,1 +1,31 @@
-page-single-cd {}
+page-single-cd {
+    ion-card {
+        position: relative;
+        text-align: center;
+        .grey-filter {
+            height: 100%;
+            width: 100%;
+            top: 0;
+            position: absolute;
+            background-color: #000;
+            opacity: 0.2;
+        }
+        .card-title {
+            position: absolute;
+            top: 36%;
+            font-size: 2.0em;
+            width: 100%;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 2px black;
+        }
+        .card-subtitle {
+            font-size: 1.3em;
+            position: absolute;
+            top: 52%;
+            width: 100%;
+            color: #fff;
+            text-shadow: 1px 1px 2px black;
+        }
+    }
+}

@@ -7,13 +7,18 @@ import { NavParams } from 'ionic-angular';
 })
 export class SingleBookPage {
 
-  name: string;
+  book: {
+    name: string,
+    author: string,
+    image: string,
+    description: string
+  }
 
   constructor(public navParams: NavParams) {
   }
 
   ngOnInit() {
-    this.name = this.navParams.get('bookName');
+    this.book = this.navParams.get('book');
   }
 
 }

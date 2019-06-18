@@ -1,10 +1,21 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Books</ion-title>
+        <ion-title>CDs</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <button ion-button (click)="onLoadCd('The Hypnoflip Invasion')">The Hypnoflip Invasion</button>
-    <button ion-button (click)="onLoadCd('A Night at the Opera')">A Night at the Opera</button>
+    <ion-list>
+        <ion-item *ngFor="let cd of cdsList">
+            <ion-thumbnail item-start>
+                <img src="/assets/imgs/cds/{{cd.image}}">
+            </ion-thumbnail>
+            <div class="cds-text">
+                <h2>{{cd.name}}</h2>
+                <h4>{{cd.artist}}</h4>
+            </div>
+            <button ion-button clear item-end (click)="onLoadCd(cd)">View</button>
+        </ion-item>
+        <!-- <button ion-item *ngFor="let cd of cdsList" (click)="onLoadCd(cd)">{{cd.name}}</button> -->
+    </ion-list>
 </ion-content>

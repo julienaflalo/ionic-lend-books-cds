@@ -1,0 +1,15 @@
+page-books {
+    .books-img {
+        padding-right: 8px;
+        img {
+            box-shadow: 2px 2px 5px #444;
+        }
+    }
+    .books-text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        white-space: normal;
+        padding-left: 8px;
+    }
+}

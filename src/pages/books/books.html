@@ -5,6 +5,17 @@
 </ion-header>
 
 <ion-content padding>
-    <button ion-button (click)="onLoadBook('Electrochoc')">Electrochoc</button>
-    <button ion-button (click)="onLoadBook('La semaine de 4 heures')">La semaine de 4 heures</button>
+    <ion-list>
+        <button ion-item *ngFor="let book of booksList" (click)="onLoadBook(book)">
+            <ion-row>
+                <ion-col col-4 class="books-img">
+                    <img src="assets/imgs/books/{{book.image}}">
+                </ion-col>
+                <ion-col col-8 class="books-text">
+                    <h2>{{book.name}}</h2>
+                    <h4>{{book.author}}</h4>
+                </ion-col>
+            </ion-row>
+        </button>
+    </ion-list>
 </ion-content>

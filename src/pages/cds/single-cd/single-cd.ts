@@ -7,13 +7,17 @@ import { NavParams } from 'ionic-angular';
 })
 export class SingleCdPage {
 
-  name: string;
+  cd: {
+    name: string,
+    artist: string,
+    image: string,
+  }
 
   constructor(public navParams: NavParams) {
   }
 
   ngOnInit() {
-    this.name = this.navParams.get('CdName');
+    this.cd = this.navParams.get('cd');
   }
 
 }
