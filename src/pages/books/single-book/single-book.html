@@ -17,6 +17,16 @@
         <img src="assets/imgs/books/{{book.image}}">
         <ion-card-content>
             <p>{{ book.description }}</p>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <button ion-button full color="danger" [disabled]="!book.isAvailable" (click)="onToggleBook()">Lend</button>
+                    </ion-col>
+                    <ion-col>
+                        <button ion-button full color="secondary" [disabled]="book.isAvailable" (click)="onToggleBook()">Get back</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
         </ion-card-content>
     </ion-card>
 </ion-content>
